@@ -19,10 +19,13 @@ function* range(start: number, end: number) {
 
 @Component({
   selector: 'cron-time-picker',
-  templateUrl: './cron-time-picker.template.html',
+  templateUrl: './cron-time-picker.component.html',
+  styleUrls: ['./cron-time-picker.component.scss'],
   providers: [
-    {provide: MAT_LABEL_GLOBAL_OPTIONS, useValue: {float: 'always'}},
-    {provide: MAT_FORM_FIELD_DEFAULT_OPTIONS, useValue: {appearance: 'outline'}}
+    {
+      provide: MAT_FORM_FIELD_DEFAULT_OPTIONS,
+      useValue: { appearance: 'outline', floatLabel: 'always' }
+    }
   ]
 })
 export class TimePickerComponent {

@@ -47,7 +47,7 @@
                 </mat-select>
               </mat-form-field>
 
-               at
+              <span>at</span>
 
               <cron-time-picker
                 formGroupName="everyDays"
@@ -112,7 +112,7 @@
               <!-- Spesific day -->
               <span formGroupName="specificDay">
 
-                On the
+                <span>On the</span>
 
                 <ng-container *ngIf="options.cronFlavor === 'quartz'">
                   <mat-form-field>
@@ -136,7 +136,7 @@
                   </mat-form-field>
                 </ng-container>
 
-                of every
+                <span>of every</span>
 
                 <ng-container>
                   <mat-form-field>
@@ -149,7 +149,7 @@
                   </mat-form-field>
                 </ng-container>
 
-                at time
+                <span>at time</span>
 
                 <cron-time-picker [disabled]="disabled" [formGroup]="monthlyForm.controls.specificDay"
                                   [use24HourTime]="options.use24HourTime"
@@ -165,7 +165,7 @@
               <!-- Spesific Week day -->
               <span formGroupName="specificWeekDay">
 
-                On the
+                <span>On the</span>
 
                 <mat-form-field>
                   <mat-label>Week</mat-label>
@@ -185,7 +185,7 @@
                   </mat-select>
                 </mat-form-field>
 
-                of every
+                <span>of every</span>
 
                 <mat-form-field>
                   <mat-label>Month</mat-label>
@@ -196,7 +196,7 @@
                   </mat-select>
                 </mat-form-field>
 
-                at time
+                <span>at time</span>
 
                 <cron-time-picker [formGroup]="monthlyForm.controls.specificWeekDay"
                                   [use24HourTime]="options.use24HourTime"
@@ -222,7 +222,7 @@
 
             <mat-radio-button name="yearly-radio" value="specificMonthDay">
 
-              On the
+              <span>On the</span>
 
               <mat-form-field formGroupName="specificMonthDay" *ngIf="options.cronFlavor === 'quartz'">
                 <mat-label>Day</mat-label>
@@ -242,7 +242,7 @@
                 </mat-select>
               </mat-form-field>
 
-              of
+              <span>of</span>
 
               <mat-form-field formGroupName="specificMonthDay">
                 <mat-label>Month</mat-label>
@@ -253,7 +253,7 @@
                 </mat-select>
               </mat-form-field>
 
-              at time
+              <span>at time</span>
 
               <cron-time-picker [disabled]="disabled"
                                 [formGroup]="yearlyForm.controls.specificMonthDay"
@@ -264,7 +264,7 @@
 
             <mat-radio-button name="yearly-radio" value="specificMonthWeek" [ngClass]="state.formRadioClass">
 
-              On the
+              <span>On the</span>
 
               <mat-form-field formGroupName="specificMonthWeek">
                 <mat-label>Week</mat-label>
@@ -284,7 +284,7 @@
                 </mat-select>
               </mat-form-field>
 
-              of
+              <span>of</span>
 
               <mat-form-field formGroupName="specificMonthWeek">
                 <mat-label>Month</mat-label>
@@ -295,7 +295,7 @@
                 </mat-select>
               </mat-form-field>
 
-              at time
+              <span>at time</span>
 
               <cron-time-picker [disabled]="disabled"
                                 [formGroup]="yearlyForm.controls.specificMonthWeek"

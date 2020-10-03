@@ -1,6 +1,6 @@
 <section class="mat-typography demo-container">
 
-  <h1>Angular 8+ Cron Expression Editor</h1>
+  <h1>Angular 10 Cron Expression Editor</h1>
 
     <mat-card class="demo-card">
       <mat-card-header class="demo-card-header">
@@ -25,15 +25,18 @@
       </mat-card-header>
 
       <mat-card-content class="demo-card-content">
-        <form >
-        <cron-editor  #cronEditorDemo [formControl]="cronForm"  [options]="cronOptions">Cron here...</cron-editor>
+        <form [formGroup]="form">
+        <cron-editor
+          #cronEditorDemo
+          [formControl]="form.controls.cron"
+          [options]="cronOptions">Cron here...</cron-editor>
         </form>
       </mat-card-content>
 
       <mat-card-footer class="demo-card-footer">
         <div>
           <h3>
-            <b>Expression: {{cronForm.value}}</b>
+            <b>Expression: {{form.controls.cron.value}}</b>
           </h3>
         </div>
       </mat-card-footer>

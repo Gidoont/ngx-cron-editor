@@ -1,20 +1,12 @@
 {
   "$schema": "./node_modules/ng-packagr/package.schema.json",
-  "description": "A cron expression generator for Angular 8+",
-  "name": "ngx-cron-editor",
-  "version": "0.6.4",
+  "description": "A cron expression generator for Angular 10",
+  "name": "@gidoont/ngx-cron-editor",
+  "version": "0.0.8",
   "repository": {
     "type": "git",
-    "url": "git://github.com/haavardj/ngx-cron-editor"
+    "url": "git://github.com/Gidoont/ngx-cron-editor"
   },
-  "author": {
-    "name": "Håvard Dagenborg Johansen",
-    "email": "haavardj@dagenborg.net"
-  },
-  "contributors": [
-    "Claudiu Constantin",
-    "Eduardo Sarmiento"
-  ],
   "keywords": [
     "angular",
     "cron",
@@ -24,9 +16,9 @@
   ],
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/haavardj/ngx-cron-editor/issues"
+    "url": "https://github.com/Gidoont/ngx-cron-editor/issues"
   },
-  "homepage": "https://github.com/haavardj/ngx-cron-editor",
+  "homepage": "https://github.com/Gidoont/ngx-cron-editor",
   "peerDependencies": {
     "@angular/core": "~8.2.14",
     "@angular/animations": "~8.2.14",
@@ -38,8 +30,10 @@
     "@angular/router": "~8.2.14",
     "@angular/material": "^8.2.3",
     "rxjs": "~6.5.3",
-    "tslib": "^1.10.0",
     "zone.js": "~0.9.1"
+  },
+  "dependencies": {
+    "tslib": "^2.0.0"
   },
   "ngPackage": {
     "lib": {

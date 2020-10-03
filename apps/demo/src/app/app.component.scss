@@ -22,3 +22,7 @@
   margin: 0px;
   padding: 16px;
 }
+
+::ng-deep .mat-form-field {
+  width: 100%;
+}

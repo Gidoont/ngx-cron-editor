@@ -1,7 +1,7 @@
 
 
 .cron-editor-main {
-  @include mat-elevation(1);
+  min-height: 250px;
 }
 
 .cron-editor-main .cron-editor-container {
@@ -11,6 +11,7 @@
   height: 200px;
   margin-top: 24px;
   border-radius: 8px;
+  overflow: auto;
 }
 
 .cron-editor-main .cron-editor-container .cron-editor-radio {
@@ -78,4 +79,25 @@
 
 .checkbox-margin {
   margin: 0 10px;
+}
+
+.cron-editor-tab-content {
+  .mat-form-field {
+    width: auto;
+  }
+
+  ::ng-deep {
+    .mat-form-field-wrapper {
+      padding-bottom: 0;
+    }
+
+    .mat-radio-label-content, .mat-radio-label-content > span {
+      display: flex;
+      align-items: center;
+
+      > * {
+        margin-right: 5px;
+      }
+    }
+  }
 }

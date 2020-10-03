@@ -2,7 +2,7 @@ import {Component, Input, Output, OnInit, OnChanges, SimpleChanges, EventEmitter
 import {CronOptions} from './CronOptions';
 import {Days, MonthWeeks, Months} from './enums';
 import {ControlContainer, ControlValueAccessor, FormBuilder, FormControl, FormGroup, NG_VALUE_ACCESSOR} from '@angular/forms';
-import { MAT_LABEL_GLOBAL_OPTIONS, ThemePalette } from '@angular/material/core';
+import { ThemePalette } from '@angular/material/core';
 import { MAT_FORM_FIELD_DEFAULT_OPTIONS } from '@angular/material/form-field';
 
 
@@ -15,12 +15,14 @@ export const CRON_VALUE_ACCESSOR: any = {
 
 @Component({
   selector: 'cron-editor',
-  templateUrl: './cron-editor.template.html',
-  styleUrls: ['./cron-editor.component.css'],
+  templateUrl: './cron-editor.component.html',
+  styleUrls: ['./cron-editor.component.scss'],
   providers: [
     CRON_VALUE_ACCESSOR,
-    {provide: MAT_LABEL_GLOBAL_OPTIONS, useValue: {float: 'always'}},
-    {provide: MAT_FORM_FIELD_DEFAULT_OPTIONS, useValue: {appearance: 'outline'}}
+    {
+      provide: MAT_FORM_FIELD_DEFAULT_OPTIONS,
+      useValue: {appearance: 'outline', floatLabel: 'always'},
+    }
   ]
 })
 export class CronGenComponent implements OnInit, ControlValueAccessor {
@@ -28,7 +30,7 @@ export class CronGenComponent implements OnInit, ControlValueAccessor {
   @Input() public backgroundColor: ThemePalette;
   @Input() public color: ThemePalette;
   @Input() public disabled: boolean;
-  @Input() public options: CronOptions;
+  @Input() public options: Partial<CronOptions>;
 
   @Input() get cron(): string {
     return this.localCron;

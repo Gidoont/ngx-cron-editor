@@ -9,13 +9,14 @@ import {FormBuilder, FormControl, FormGroup} from '@angular/forms';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent implements OnInit {
-  public cronExpression = '0 0 1/1 * *';
-  public isCronDisabled = false;
-  public cronOptions: CronOptions = {
-    formInputClass: 'form-control cron-editor-input',
-    formSelectClass: 'form-control cron-editor-select',
-    formRadioClass: 'cron-editor-radio',
-    formCheckboxClass: 'cron-editor-checkbox',
+  // public cronExpression = '0 0 1/1 * *';
+  // public isCronDisabled = false;
+
+  public cronOptions = {
+    // formInputClass: 'form-control cron-editor-input',
+    // formSelectClass: 'form-control cron-editor-select',
+    // formRadioClass: 'cron-editor-radio',
+    // formCheckboxClass: 'cron-editor-checkbox',
 
     defaultTime: '00:00:00',
 
@@ -35,15 +36,18 @@ export class AppComponent implements OnInit {
     cronFlavor: 'standard'
   };
 
-  @ViewChild('cronEditorDemo', { static: false })
+  @ViewChild('cronEditorDemo')
   cronEditorDemo: CronGenComponent;
 
-  cronForm: FormControl;
+  form: FormGroup;
+  cronValue = null;
 
-  constructor() {}
+  constructor(private formBuilder: FormBuilder) {}
 
   ngOnInit(): void {
-    this.cronForm = new FormControl(this.cronExpression);
+    this.form = this.formBuilder.group({
+      cron: [this.cronValue],
+    })
   }
 
   cronFlavorChange() {
