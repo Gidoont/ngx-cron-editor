@@ -2,7 +2,8 @@ import {Component, Input, Output, OnInit, OnChanges, SimpleChanges, EventEmitter
 import {CronOptions} from './CronOptions';
 import {Days, MonthWeeks, Months} from './enums';
 import {ControlContainer, ControlValueAccessor, FormBuilder, FormControl, FormGroup, NG_VALUE_ACCESSOR} from '@angular/forms';
-import {ThemePalette} from '@angular/material/core';
+import { MAT_LABEL_GLOBAL_OPTIONS, ThemePalette } from '@angular/material/core';
+import { MAT_FORM_FIELD_DEFAULT_OPTIONS } from '@angular/material/form-field';
 
 
 export const CRON_VALUE_ACCESSOR: any = {
@@ -16,7 +17,11 @@ export const CRON_VALUE_ACCESSOR: any = {
   selector: 'cron-editor',
   templateUrl: './cron-editor.template.html',
   styleUrls: ['./cron-editor.component.css'],
-  providers: [CRON_VALUE_ACCESSOR]
+  providers: [
+    CRON_VALUE_ACCESSOR,
+    {provide: MAT_LABEL_GLOBAL_OPTIONS, useValue: {float: 'always'}},
+    {provide: MAT_FORM_FIELD_DEFAULT_OPTIONS, useValue: {appearance: 'outline'}}
+  ]
 })
 export class CronGenComponent implements OnInit, ControlValueAccessor {
 

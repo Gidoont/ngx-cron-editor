@@ -28,10 +28,6 @@ import {MAT_FORM_FIELD_DEFAULT_OPTIONS} from '@angular/material/form-field';
   ],
     exports: [TimePickerComponent, CronGenComponent],
     declarations: [TimePickerComponent, CronGenComponent],
-    providers: [
-    {provide: MAT_LABEL_GLOBAL_OPTIONS, useValue: {float: 'always'}},
-    {provide: MAT_FORM_FIELD_DEFAULT_OPTIONS, useValue: {appearance: 'outline'}}
-  ]
 })
 export class CronEditorModule {
 }

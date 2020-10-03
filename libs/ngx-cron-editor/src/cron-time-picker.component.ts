@@ -1,5 +1,7 @@
 ﻿import {Component, Input } from '@angular/core';
 import { ControlContainer } from '@angular/forms';
+import { MAT_LABEL_GLOBAL_OPTIONS } from '@angular/material/core';
+import { MAT_FORM_FIELD_DEFAULT_OPTIONS } from '@angular/material/form-field';
 
 
 export interface TimePickerModel {
@@ -18,7 +20,10 @@ function* range(start: number, end: number) {
 @Component({
   selector: 'cron-time-picker',
   templateUrl: './cron-time-picker.template.html',
-  providers: []
+  providers: [
+    {provide: MAT_LABEL_GLOBAL_OPTIONS, useValue: {float: 'always'}},
+    {provide: MAT_FORM_FIELD_DEFAULT_OPTIONS, useValue: {appearance: 'outline'}}
+  ]
 })
 export class TimePickerComponent {
 
